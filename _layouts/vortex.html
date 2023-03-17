@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<title>Search - Pokémon Vortex</title>
+<meta charset=utf-8 />
+<meta name=viewport content="width=device-width,initial-scale=1" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel=stylesheet />
+<link href=bs1/style.css rel=stylesheet />
+<link href=https://smokeinyourbrain.blogspot.com/favicon.ico rel=icon type=image/x-icon>
+<script src=https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js></script>
+<style>.go-tiny{font-size:10px!important}.go-small{font-size:12px!important}</style>
+</head>
+<body>
+<div class=container>
+<div ng-app=myApp ng-controller=pkmnCtrl>
+<div class="text-center mt-4">
+<span class=navbar-brand>
+<img src=bs1/thedealer.png alt=theDealer style=width:60px class="rounded-pill border border-danger" /></span>
+<h2 class="m-4 text-center">Search Vortex</h2>
+<div class="text-start alert alert-info">
+<strong>Note:</strong>The list will only consists of names matching
+the filter. <br />wiki link =
+<i class="material-icons align-middle">open_in_new</i>
+</div>
+</div>
+<div class="form-floating mt-3 mb-3">
+<input ng-model=test type=text class="form-control border border-primary" id=search placeholder="Type a letter.." name=search />
+<label for=search>Search Pokémon</label>
+</div>
+<div class=table-responsive>
+<table id=myTable class="table table-striped">
+<tr class="bg-light border">
+<th>ID</th>
+<th>
+Pokémon
+<span class="small badge rounded-pill bg-secondary">in list: {{pkmn.length}}</span>
+</th>
+</tr>
+<tr ng-repeat="x in pkmn | filter:test" class=align-middle>
+<td style=width:80px class=align-middle>#{{x.id}}</td>
+<td>
+{{x.name}}
+<a href={{wiki}}{{x.name}} target=_blank class="go-tiny align-middle">
+<i class="material-icons align-top">open_in_new</i></a>
+</td>
+</tr>
+<tr class=table-warning>
+<td class=text-center colspan=2>End Of List</td>
+</tr>
+</table>
+</div>
+</div>
+<p id=demo></p>
+</div>
+<script src=bs1/searchVortexCtrl.min.js></script>
+</body>
+</html>
