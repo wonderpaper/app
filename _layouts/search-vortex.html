@@ -50,8 +50,8 @@
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('results-container'),
       json: '{{ site.baseurl }}/searchVortex.json',
-      searchResultTemplate: '<li><a href="https://wiki.pokemon-vortex.com/wiki/{{ name }}" target="_blank" rel="noopener noreferrer">[ {{ id }} ] {{ name }}</a></li>',
-      noResultsText: 'No results found',
+      searchResultTemplate: '<li><a href="https://wiki.pokemon-vortex.com/wiki/{name}" target="_blank" rel="noopener noreferrer">[ {id} ] {name}</a></li>',
+      noResultsText: 'Pokemon not found.',
       limit: 10,
       fuzzy: false,
       exclude: ['Welcome']
