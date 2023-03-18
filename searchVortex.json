@@ -1,7 +1,7 @@
 ---
 layout: none
 ---
-#  {% assign vortex1 = site.data.vortex | jsonify %}
+// {% assign vortex1 = site.data.vortex | jsonify %}
 [
   {% for item in site.data.vortex %}
     {
